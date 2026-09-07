@@ -1,7 +1,7 @@
-import { useSupabase } from "@/hooks/useSupabase";
-import { useUserStore } from "@/store/userStore";
 import { useUser } from "@clerk/expo";
 import { useEffect } from "react";
+import { useSupabase } from "@/hooks/useSupabase";
+import { useUserStore } from "@/store/userStore";
 
 export const useUserSync = () => {
   const { user } = useUser();

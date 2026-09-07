@@ -1,7 +1,7 @@
-import { useUserStore } from '@/store/userStore';
-import { Icon, Label, NativeTabs } from 'expo-router/unstable-native-tabs';
+import { useUserStore } from "@/store/userStore";
+import { NativeTabs, Icon, Label } from "expo-router/unstable-native-tabs";
 
-export default function TabLayout() {
+export default function TabsLayout() {
   const isAdmin = useUserStore((state) => state.isAdmin);
 
   return (

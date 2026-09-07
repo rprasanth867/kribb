@@ -16,5 +16,3 @@ export default function RootLayout() {
     </ClerkProvider>
   );
 }
-
-// npm install @react-native-async-storage/async-storage

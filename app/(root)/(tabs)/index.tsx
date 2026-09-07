@@ -1,5 +1,5 @@
-// import FeaturedCard from "@/components/FeaturedCard";
-// import PropertyCard from "@/components/PropertyCard";
+import FeaturedCard from "@/components/FeaturedCard";
+import PropertyCard from "@/components/PropertyCard";
 import { supabase } from "@/lib/supabase";
 import { Property } from "@/types";
 import { useUser } from "@clerk/expo";
@@ -7,11 +7,12 @@ import { Ionicons } from "@expo/vector-icons";
 import { useFocusEffect, useRouter } from "expo-router";
 import { useCallback, useState } from "react";
 import {
+  ActivityIndicator,
   FlatList,
   Image,
   Text,
   TouchableOpacity,
-  View
+  View,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
@@ -105,7 +106,7 @@ export default function HomeScreen() {
                 Featured
               </Text>
 
-              {/* {loading ? (
+              {loading ? (
                 <ActivityIndicator
                   size="small"
                   color="#2563EB"
@@ -120,7 +121,7 @@ export default function HomeScreen() {
                   showsHorizontalScrollIndicator={false}
                   contentContainerStyle={{ paddingHorizontal: 20 }}
                 />
-              )} */}
+              )}
             </View>
 
             {/* Recommended Header */}
@@ -131,7 +132,7 @@ export default function HomeScreen() {
         }
         renderItem={({ item }) => (
           <View className="px-5">
-            <Text>{item.title}</Text>
+            <PropertyCard property={item} />
           </View>
         )}
         ListEmptyComponent={
